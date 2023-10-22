@@ -43,9 +43,17 @@ const app = Vue.createApp({
             };
         },
         playerHealthBarStyle(){
-            return {
-                width:this.playerHealth +'%' 
-            };
+            if (this.playerHealth>100) {
+                this.playerHealth=100;    
+                return {
+                    width:this.playerHealth +'%' 
+                };            
+            } else {
+                return {
+                    width:this.playerHealth +'%' 
+                };
+            }
+            
         },
         checkDisabled() {
             return this.currentRoundCount % 3 !==0;
