@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue Basics</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1>Vue Events</h1>
+    </header>
+    <section id="events">
+      <h2>Events in Action</h2>
+      <button @click="addCounter()">Add</button>
+      <button @click="reduceCounter()">Reduce</button>
+      <button @click="resetName()">Reset Name</button>
+      <p v-once>Initial Result: {{ counter }}</p>
+      <p>Final Result: {{ counter }}</p>
+      <input @input="setName" @keyup.enter="confirmName" type="text" v-model="yourName" placeholder="Type your name here">
+      <p>You Type your name as:{{displayYourName}}</p>
+      <p>Your Confirmed Name: {{confirmedName}}</p>
+      <form @submit.prevent="submitForm">
+        <input type="text">
+        <button>Sign Up</button>
+      </form>
+    </section>
+  </body>
+</html>
